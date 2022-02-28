@@ -1,0 +1,13 @@
+{
+  "name": "remote-video-screenshot",
+  "version": "1.0.0",
+  "main": "api/screenshot.js",
+  "repository": "git@github.com:nestarz/remote-video-screenshot.git",
+  "author": "Elias Rhouzlane <elias.rhouzlane@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "fluent-ffmpeg": "^2.1.2"
+  }
+}
