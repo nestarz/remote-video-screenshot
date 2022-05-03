@@ -7,8 +7,7 @@ module.exports = async (req, res) => {
   const { url, seek = 5 } = req.query;
   if (!url) throw Error("Missing video url");
 
-  const { data } = await axios.get(url, { responseType: "stream" });
-  await ffmpeg(data)
+  await ffmpeg(url)
     .outputOptions([
       "-f image2",
       "-vframes 1",
