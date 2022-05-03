@@ -6,7 +6,6 @@
   "author": "Elias Rhouzlane <elias.rhouzlane@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.21.1",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "fluent-ffmpeg": "^2.1.2"
   }
