@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
     .pipe(
       res.writeHead(200, {
         "Content-Type": `image/png`,
-        "Cache-Control": "s-maxage=43200, stale-while-revalidate",
+        "Cache-Control": `s-maxage=${86400 * 30}, stale-while-revalidate`,
       }),
       { end: true }
     );
