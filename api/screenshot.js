@@ -5,8 +5,16 @@ ffmpeg.setFfmpegPath(ffmpegPath);
 module.exports = async (req, res) => {
   const { url, seek = 5 } = req.query;
   if (!url) throw Error("Missing video url");
+  const { origin, pathname, search } = new URL(url);
+  const safeUrl = [
+    origin,
+    pathname,
+    search?.endsWith?.(".mp4") ? encodeURIComponent(search) : search,
+  ]
+    .filter((v) => v)
+    .join("");
 
-  await ffmpeg(url)
+  await ffmpeg(safeUrl)
     .outputOptions([
       "-f image2",
       "-vframes 1",
